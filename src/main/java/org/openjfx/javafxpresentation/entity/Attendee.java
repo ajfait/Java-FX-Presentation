@@ -1,4 +1,4 @@
-package org.openjfx.javafxpresentation.Entity;
+package org.openjfx.javafxpresentation.entity;
 
 import jakarta.persistence.*;
 import org.hibernate.annotations.GenericGenerator;
@@ -22,7 +22,7 @@ public class Attendee {
     @Column(name = "email_optin")
     private boolean emailOptIn;
     @Column(name = "phone")
-    private int phone;
+    private String phone;
     @Column(name = "phone_optin")
     private boolean phoneOptIn;
 
@@ -43,7 +43,7 @@ public class Attendee {
      * @param phone      the phone
      * @param phoneOptIn the phone opt in
      */
-    public Attendee(int id, String firstName, String lastName, String email, boolean emailOptIn, int phone, boolean phoneOptIn) {
+    public Attendee(int id, String firstName, String lastName, String email, boolean emailOptIn, String phone, boolean phoneOptIn) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
@@ -148,7 +148,7 @@ public class Attendee {
      *
      * @return the phone
      */
-    public int getPhone() {
+    public String getPhone() {
         return phone;
     }
 
@@ -157,7 +157,7 @@ public class Attendee {
      *
      * @param phone the phone
      */
-    public void setPhone(int phone) {
+    public void setPhone(String phone) {
         this.phone = phone;
     }
 

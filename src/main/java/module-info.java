@@ -1,4 +1,6 @@
 module org.openjfx.javafxpresentation {
+    requires java.naming;
+
     requires javafx.controls;
     requires javafx.fxml;
     requires javafx.web;
@@ -13,7 +15,9 @@ module org.openjfx.javafxpresentation {
     requires org.hibernate.orm.core;
 
     opens org.openjfx.javafxpresentation to javafx.fxml;
+
     exports org.openjfx.javafxpresentation;
-    exports org.openjfx.javafxpresentation.Entity;
-    opens org.openjfx.javafxpresentation.Entity to javafx.fxml;
+    exports org.openjfx.javafxpresentation.entity;
+
+    opens org.openjfx.javafxpresentation.entity to javafx.fxml, org.hibernate.orm.core;
 }

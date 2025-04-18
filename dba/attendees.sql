@@ -13,6 +13,6 @@ CREATE TABLE IF NOT EXISTS madison042025
     last_name   VARCHAR(50),
     email       VARCHAR(50),
     email_optin TINYINT(1),
-    phone       INT(10),
+    phone       VARCHAR(15),
     phone_optin TINYINT(1)
 );
