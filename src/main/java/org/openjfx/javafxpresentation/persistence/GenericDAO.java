@@ -2,6 +2,7 @@ package org.openjfx.javafxpresentation.persistence;
 
 import jakarta.persistence.criteria.CriteriaQuery;
 import org.hibernate.Session;
+import org.hibernate.Transaction;
 import org.hibernate.query.criteria.HibernateCriteriaBuilder;
 
 import java.util.List;
@@ -28,9 +29,25 @@ public class GenericDAO<T> {
     }
 
     /**
+     * Inserts.
+     *
+     * @param entity the entity
+     * @return the int
+     */
+    public int insert(T entity) {
+        int id = 0;
+        Session session = getSession();
+        Transaction transaction = session.beginTransaction();
+        id = (int)session.save(entity);
+        transaction.commit();
+        session.close();
+        return id;
+    }
+
+    /**
      * Gets all.
      *
-     * @return all
+     * @return the all
      */
     public List<T> getAll() {
         try (Session session = getSession()) {
@@ -40,5 +57,45 @@ public class GenericDAO<T> {
             List<T> entities = session.createSelectionQuery(query).getResultList();
             return entities;
         }
+    }
+
+    /**
+     * Gets by id.
+     *
+     * @param <T> the type parameter
+     * @param id  the id
+     * @return the by id
+     */
+    public <T>T getById(int id) {
+        Session session = getSession();
+        T entity = (T)session.get(type, id);
+        session.close();
+        return entity;
+    }
+
+    /**
+     * Updates.
+     *
+     * @param entity the entity
+     */
+    public void update(T entity) {
+        Session session = getSession();
+        Transaction transaction = session.beginTransaction();
+        session.merge(entity);
+        transaction.commit();
+        session.close();
+    }
+
+    /**
+     * Deletes.
+     *
+     * @param entity the entity
+     */
+    public void delete(T entity) {
+        Session session = getSession();
+        Transaction transaction = session.beginTransaction();
+        session.delete(entity);
+        transaction.commit();
+        session.close();
     }
 }

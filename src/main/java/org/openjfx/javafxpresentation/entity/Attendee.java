@@ -35,7 +35,6 @@ public class Attendee {
     /**
      * Instantiates a new Attendee.
      *
-     * @param id         the id
      * @param firstName  the first name
      * @param lastName   the last name
      * @param email      the email
@@ -43,8 +42,7 @@ public class Attendee {
      * @param phone      the phone
      * @param phoneOptIn the phone opt in
      */
-    public Attendee(int id, String firstName, String lastName, String email, boolean emailOptIn, String phone, boolean phoneOptIn) {
-        this.id = id;
+    public Attendee(String firstName, String lastName, String email, boolean emailOptIn, String phone, boolean phoneOptIn) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
