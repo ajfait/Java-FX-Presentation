@@ -36,3 +36,9 @@ build/
 
 ### Mac OS ###
 .DS_Store
+
+### Config Files ###
+src/main/resources/hibernate.cfg.xml
+src/test/resources/hibernate.cfg.xml
+src/main/resources/database.properties
+src/test/resources/database.properties
