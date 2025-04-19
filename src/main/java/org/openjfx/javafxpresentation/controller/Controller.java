@@ -1,20 +1,36 @@
 package org.openjfx.javafxpresentation.controller;
 
 import javafx.fxml.FXML;
-import javafx.scene.control.Label;
+import javafx.scene.control.CheckBox;
+import javafx.scene.control.TextField;
+import javafx.event.ActionEvent;
+import org.openjfx.javafxpresentation.entity.Attendee;
+import org.openjfx.javafxpresentation.persistence.GenericDAO;
 
 /**
  * The type Controller.
  */
 public class Controller {
-    @FXML
-    private Label loginText;
+    @FXML private TextField firstName;
+    @FXML private TextField lastName;
+    @FXML private TextField email;
+    @FXML private TextField phone;
+    @FXML private CheckBox emailOptIn;
+    @FXML private CheckBox phoneOptIn;
 
-    /**
-     * On button click.
-     */
     @FXML
-    protected void onButtonClick() {
-        loginText.setText("You have successfully logged in.");
+    private void handleSignUp(ActionEvent event) {
+        // Extract form data.
+        Attendee attendee = new Attendee();
+        attendee.setFirstName(firstName.getText());
+        attendee.setLastName(lastName.getText());
+        attendee.setEmail(email.getText());
+        attendee.setPhone(phone.getText());
+        attendee.setEmailOptIn(emailOptIn.isSelected());
+        attendee.setPhoneOptIn(phoneOptIn.isSelected());
+
+        // Add to database.
+        GenericDAO<Attendee> dao = new GenericDAO<>(Attendee.class);
+        dao.insert(attendee);
     }
 }

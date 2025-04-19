@@ -16,6 +16,7 @@ module org.openjfx.javafxpresentation {
     requires java.naming;
     requires jakarta.persistence;
     requires org.hibernate.orm.core;
+    requires java.desktop;
 
     // Exports - only what's needed publicly
     exports org.openjfx.javafxpresentation.entity;

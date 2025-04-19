@@ -43,37 +43,37 @@
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <TextField id="firstName" promptText="Enter your first name." GridPane.columnIndex="1" GridPane.rowIndex="3">
+            <TextField fx:id="firstName" promptText="Enter your first name." GridPane.columnIndex="1" GridPane.rowIndex="3">
                <font>
                   <Font size="16.0" />
                </font>
             </TextField>
-            <TextField id="lastName" promptText="Enter your last name." GridPane.columnIndex="1" GridPane.rowIndex="5">
+            <TextField fx:id="lastName" promptText="Enter your last name." GridPane.columnIndex="1" GridPane.rowIndex="5">
                <font>
                   <Font size="16.0" />
                </font>
             </TextField>
-            <TextField id="email" promptText="Enter your email address." GridPane.columnIndex="1" GridPane.rowIndex="7">
+            <TextField fx:id="email" promptText="Enter your email address." GridPane.columnIndex="1" GridPane.rowIndex="7">
                <font>
                   <Font size="16.0" />
                </font>
             </TextField>
-            <TextField id="phone" promptText="Enter your phone number." GridPane.columnIndex="1" GridPane.rowIndex="9">
+            <TextField fx:id="phone" promptText="Enter your phone number." GridPane.columnIndex="1" GridPane.rowIndex="9">
                <font>
                   <Font size="16.0" />
                </font>
             </TextField>
-            <Button mnemonicParsing="false" text="Sign Up" GridPane.columnIndex="1" GridPane.rowIndex="11">
+            <Button fx:id="signUpButton" onAction="#handleSignUp" mnemonicParsing="false" text="Sign Up" GridPane.columnIndex="1" GridPane.rowIndex="11">
                <font>
                   <Font name="System Bold" size="18.0" />
                </font>
             </Button>
-            <CheckBox id="emailOptIn" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" text="Opt-In" GridPane.columnIndex="3" GridPane.rowIndex="7">
+            <CheckBox fx:id="emailOptIn" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" text="Opt-In" GridPane.columnIndex="3" GridPane.rowIndex="7">
                <font>
                   <Font size="16.0" />
                </font>
             </CheckBox>
-            <CheckBox id="phoneOptIn" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" text="Opt-In" GridPane.columnIndex="3" GridPane.rowIndex="9">
+            <CheckBox fx:id="phoneOptIn" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" text="Opt-In" GridPane.columnIndex="3" GridPane.rowIndex="9">
                <font>
                   <Font size="16.0" />
                </font>
