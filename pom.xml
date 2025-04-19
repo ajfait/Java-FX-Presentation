@@ -180,11 +180,9 @@
                 <version>0.0.8</version>
                 <executions>
                     <execution>
-                        <!-- Default configuration for running with: mvn clean javafx:run -->
                         <id>default-cli</id>
                         <configuration>
-                            <mainClass>org.openjfx.javafxpresentation/org.openjfx.javafxpresentation.view.SignupForm
-                            </mainClass>
+                            <mainClass>org.openjfx.javafxpresentation.view.SignupForm</mainClass>
                             <options>
                                 <option>--enable-native-access=javafx.graphics</option>
                             </options>
@@ -200,4 +198,5 @@
             </plugin>
         </plugins>
     </build>
+
 </project>
